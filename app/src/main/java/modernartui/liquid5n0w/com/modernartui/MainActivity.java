@@ -1,5 +1,7 @@
 package modernartui.liquid5n0w.com.modernartui;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -20,7 +22,7 @@ public class MainActivity extends ActionBarActivity {
 
     //SeekBar seekBar;
 
-    //This is a test of Github
+    //This is a test of Git hub
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,8 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         Log.d(TAG, "onCreate() Created layout");
+
+
         
 
       
@@ -55,6 +59,7 @@ public class MainActivity extends ActionBarActivity {
                     public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
                         
                         changeColor((float) i);
+
                     }
 
                     @Override
@@ -115,7 +120,14 @@ public class MainActivity extends ActionBarActivity {
         if (id == R.id.action_settings) {
             
             //TODO Make the fragment pop up
-            
+            MoreInformation dialog = new MoreInformation();
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.add(R.layout.activity_main,dialog);
+            fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.commit();
+
+            //dialog.show();
 
             return true;
         }

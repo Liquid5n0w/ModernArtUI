@@ -3,4 +3,7 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">More Information</string>
+    <string name="moreInfo">Inspired by MoMA designs</string>
+    <string name="open">Visit MoMA</string>
+    <string name="notnow">Not right now</string>
 </resources>
