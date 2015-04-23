@@ -20,6 +20,8 @@ public class MainActivity extends ActionBarActivity {
 
     //SeekBar seekBar;
 
+    //This is a test of Github
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
