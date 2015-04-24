@@ -12,8 +12,7 @@
         android:layout_height="102dp"
         android:id="@+id/box1"
         android:layout_gravity="left|top"
-        android:background="#ff53fcff"
-        android:text="0" />
+        android:background="#ff53fcff" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -50,6 +49,26 @@
         android:background="#ffff008b"
         android:layout_above="@+id/box3"
         android:layout_toEndOf="@+id/box3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/blackbox1"
+        android:layout_below="@+id/box1"
+        android:layout_alignBottom="@+id/box5"
+        android:layout_alignEnd="@+id/box3"
+        android:layout_toEndOf="@+id/box4"
+        android:background="#ff000000" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/blackbox2"
+        android:layout_alignTop="@+id/box3"
+        android:layout_alignBottom="@+id/seekBar"
+        android:layout_alignEnd="@+id/seekBar"
+        android:layout_alignStart="@+id/box5"
+        android:background="#ff000000" />
 
     <SeekBar
         android:layout_width="wrap_content"

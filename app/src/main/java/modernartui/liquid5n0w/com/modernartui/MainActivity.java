@@ -1,11 +1,10 @@
 package modernartui.liquid5n0w.com.modernartui;
 
 import android.app.AlertDialog;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
-import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -82,7 +81,7 @@ public class MainActivity extends ActionBarActivity {
 
     private void changeColor(float i) {
         i = i/1000 * 360;
-        float a = 0;
+        float a;
         
 
         for (int x=0; x < boxes.length ;  x++) {
@@ -90,8 +89,7 @@ public class MainActivity extends ActionBarActivity {
             if (a > 360)
                 a = a - 360;
             setBoxColor(boxes[x], ((int) a));
-            //TODO remove later
-            //boxes[x].setText("" + a);
+
         }
 
 
@@ -125,18 +123,22 @@ public class MainActivity extends ActionBarActivity {
         if (id == R.id.more_info) {
             Log.d(TAG, "Menu: More Info entered");
             
-            //TODO Make the fragment pop up
+            // Make the fragment pop up
 
             new AlertDialog.Builder(context)
-                    .setTitle(R.string.dialog_title)
                     .setMessage(R.string.dialog_message)
                     .setCancelable(false)
                     .setPositiveButton(R.string.visit, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             Log.d(TAG, "Menu: Clicked Visit");
-                            //TODO Implicit intent to open site
+                            // Implicit intent to open site
                             //http://www.MoMA.org
+                            startActivity(
+                                    new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.MoMA.org")));
+
+
+
 
                         }
                     })
