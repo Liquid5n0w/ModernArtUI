@@ -1,13 +1,7 @@
 <resources>
     <string name="app_name">Modern Art UI</string>
-
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">More Information</string>
-    <string name="moreInfo">Inspired by artists such as Ben Nicholson and Sol LeWitt.  Click below to learn more!</string>
-    <string name="open">Visit MoMA</string>
-    <string name="not_now">Not right now</string>
     <string name="dialog_message">Inspired by artists such as Ben Nicholson and Sol LeWitt.  Click below to learn more!</string>
-    <string name="dialog_title">MoMA site</string>
     <string name="visit">Visit MoMA</string>
     <string name="later">Later</string>
 </resources>
