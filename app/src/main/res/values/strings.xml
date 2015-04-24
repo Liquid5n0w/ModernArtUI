@@ -5,5 +5,9 @@
     <string name="action_settings">More Information</string>
     <string name="moreInfo">Inspired by MoMA designs</string>
     <string name="open">Visit MoMA</string>
-    <string name="notnow">Not right now</string>
+    <string name="not_now">Not right now</string>
+    <string name="dialog_message">about MoMA</string>
+    <string name="dialog_title">MoMA site</string>
+    <string name="visit">Visit MoMA</string>
+    <string name="later">Later</string>
 </resources>

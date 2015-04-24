@@ -19,7 +19,7 @@ public class MoreInformation extends DialogFragment{
                         // FIRE ZE MISSILES!
                     }
                 })
-                .setNegativeButton(R.string.notnow, new DialogInterface.OnClickListener() {
+                .setNegativeButton(R.string.not_now, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // User cancelled the dialog
                     }

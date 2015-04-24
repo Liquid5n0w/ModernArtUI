@@ -1,7 +1,10 @@
 package modernartui.liquid5n0w.com.modernartui;
 
+import android.app.AlertDialog;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -18,6 +21,7 @@ public class MainActivity extends ActionBarActivity {
     float[] hsvColor = new float[3];
     TextView[] boxes = new TextView[5];
     private static final String TAG = MainActivity.class.getSimpleName();
+    private android.content.Context context = this;
 
 
     //SeekBar seekBar;
@@ -87,7 +91,7 @@ public class MainActivity extends ActionBarActivity {
                 a = a - 360;
             setBoxColor(boxes[x], ((int) a));
             //TODO remove later
-            boxes[x].setText("" + a);
+            //boxes[x].setText("" + a);
         }
 
 
@@ -105,6 +109,7 @@ public class MainActivity extends ActionBarActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        Log.d(TAG, "Menu: inflated");
 
         return true;
     }
@@ -117,21 +122,40 @@ public class MainActivity extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.more_info) {
+            Log.d(TAG, "Menu: More Info entered");
             
             //TODO Make the fragment pop up
-            MoreInformation dialog = new MoreInformation();
-            FragmentManager fragmentManager = getFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.add(R.layout.activity_main,dialog);
-            fragmentTransaction.addToBackStack(null);
-            fragmentTransaction.commit();
 
-            //dialog.show();
+            new AlertDialog.Builder(context)
+                    .setTitle(R.string.dialog_title)
+                    .setMessage(R.string.dialog_message)
+                    .setCancelable(false)
+                    .setPositiveButton(R.string.visit, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Log.d(TAG, "Menu: Clicked Visit");
+                            //TODO Implicit intent to open site
+                            //http://www.MoMA.org
 
+                        }
+                    })
+                    .setNegativeButton(R.string.later, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Log.d(TAG, "Menu: Clicked Later");
+                            dialog.cancel();
+
+                        }
+                    })
+                    .create().show();
+
+
+            Log.d(TAG, "More Info done");
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
+
 }
