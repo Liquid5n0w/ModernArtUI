@@ -16,16 +16,12 @@ import android.widget.TextView;
 
 
 public class MainActivity extends ActionBarActivity {
-    
-    float[] hsvColor = new float[3];
-    TextView[] boxes = new TextView[5];
+
     private static final String TAG = MainActivity.class.getSimpleName();
+
     private android.content.Context context = this;
-
-
-    //SeekBar seekBar;
-
-    //This is a test of Git hub
+    float[] hsvColor = new float[3];
+    TextView[] boxes = new TextView[6];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,24 +30,18 @@ public class MainActivity extends ActionBarActivity {
 
         Log.d(TAG, "onCreate() Created layout");
 
-
-        
-
-      
-
-
-        
         boxes[0] = (TextView) findViewById(R.id.box1);
         boxes[1] = (TextView) findViewById(R.id.box2);
         boxes[2] = (TextView) findViewById(R.id.box3);
         boxes[3] = (TextView) findViewById(R.id.box4);
         boxes[4] = (TextView) findViewById(R.id.box5);
+        boxes[5] = (TextView) findViewById(R.id.box6);
 
 
         Log.d(TAG, "onCreate() Setup boxes");
         hsvColor[0] = 0;
-        hsvColor[1] = (float) 0.8;
-        hsvColor[2] = (float) 0.9;
+        hsvColor[1] = (float) 0.6;
+        hsvColor[2] = (float) 0.8;
         changeColor(0);
 
         Log.d(TAG, "onCreate() Setup Color");
@@ -80,7 +70,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
     private void changeColor(float i) {
-        i = i/1000 * 360;
+        i = i/750 * 360;
         float a;
         
 
